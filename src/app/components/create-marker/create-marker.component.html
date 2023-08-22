@@ -1,0 +1,73 @@
+<form [formGroup]="markerForm" (ngSubmit)="onSubmit()"> 
+    <mat-form-field>
+        <mat-label>Citta</mat-label>
+        <input matInput type="string" name="nome" formControlName="nome">
+    </mat-form-field>
+    <p *ngIf="!markerForm.get('nome')!.valid && markerForm.get('nome')!.touched"></p> 
+
+    <mat-form-field>
+        <mat-label>Indirizzo</mat-label>
+        <input matInput type="string" name="indirizzo" formControlName="indirizzo">
+    </mat-form-field>
+    <p *ngIf="!markerForm.get('indirizzo')!.valid && markerForm.get('indirizzo')!.touched"></p> 
+
+    <mat-form-field>
+        <mat-label>Latitudine</mat-label>
+        <input matInput type="number" name="lat" formControlName="lat">
+    </mat-form-field>
+    <p *ngIf="!markerForm.get('lat')!.valid && markerForm.get('lat')!.touched"></p> 
+
+    <mat-form-field>
+        <mat-label>Longitudine</mat-label>
+        <input matInput type="number" name="lon" formControlName="lon">
+    </mat-form-field>
+    <p *ngIf="!markerForm.get('lon')!.valid && markerForm.get('lon')!.touched"></p> 
+
+
+    <mat-form-field>
+        <mat-label>Colore</mat-label>
+        <mat-select [(value)]="selectedValueColor" formControlName="colore">                                                     
+        <mat-option *ngFor="let color of allColors" [value]="'#' + color.value">
+            {{color.label}} 
+        </mat-option>
+        </mat-select>
+    </mat-form-field>
+    <p>{{selectedValueColor}}</p>                                                   <!--Dopo la selezione mostro esadecimale selezionato l'ho voluto mostrare--> 
+    
+    <!--
+    <mat-form-field>
+        <mat-label>Draggable</mat-label>
+        <select matNativeControl required>
+            <option value="0">Disabilitato</option>
+            <option value="1">Abilitato</option>
+        </select>
+    </mat-form-field> 
+    {{selectedValueDraggable}} 
+    --> 
+    <mat-form-field>
+        <mat-label>Draggable</mat-label>
+            <mat-select [(value)]="selectedValueDraggable" formControlName="draggable">                                                     
+                <mat-option value="0">Disabilita</mat-option>
+                <mat-option value="1">Abilitata</mat-option>
+            </mat-select>
+    </mat-form-field>
+
+    
+    <!-- Il bottone rimane disabilitato finchè non ho compilato tutti campio di testo-->
+    <!--<button mat-raised-button color="primary" type="submit" [disabled]="!markerForm.valid" style="margin-bottom: 50px">Crea Marker</button> -->
+    <button mat-raised-button color="accent" type="submit" [disabled]="!markerForm.valid" style="margin-right: 50px">Crea Marker</button>
+</form>
+
+<button mat-icon-button class="example-icon favorite-icon" aria-label="Example icon-button with heart icon" (click)="home()">
+    <mat-icon style="color:chocolate">home</mat-icon>
+</button>
+
+
+
+
+
+
+
+
+
+

@@ -1,0 +1,54 @@
+<form [formGroup]="polylineForm" (ngSubmit)="onSubmit()"> 
+    <mat-form-field>
+        <mat-label>Luogo di partenza</mat-label>
+        <input matInput type="string" name="nome_p" formControlName="nome_p">
+    </mat-form-field>
+    <p *ngIf="!polylineForm.get('nome_p')!.valid && polylineForm.get('nome_p')!.touched"></p> 
+
+    <mat-form-field>
+        <mat-label>Luodi arrivo</mat-label>
+        <input matInput type="string" name="nome_a" formControlName="nome_a">
+    </mat-form-field>
+    <p *ngIf="!polylineForm.get('nome_a')!.valid && polylineForm.get('nome_a')!.touched"></p> 
+
+    <mat-form-field>
+        <mat-label>Latitudine di partenza</mat-label>
+        <input matInput type="number" name="lat_p" formControlName="lat_p">
+    </mat-form-field>
+    <p *ngIf="!polylineForm.get('lat_p')!.valid && polylineForm.get('lat_p')!.touched"></p> 
+
+    <mat-form-field>
+        <mat-label>Longitudine di partenza</mat-label>
+        <input matInput type="number" name="lon_p" formControlName="lon_p">
+    </mat-form-field>
+    <p *ngIf="!polylineForm.get('lon_p')!.valid && polylineForm.get('lon_p')!.touched"></p> 
+
+    <mat-form-field>
+        <mat-label>Latituidine di arrivo</mat-label>
+        <input matInput type="number" name="lat_a" formControlName="lat_a">
+    </mat-form-field>
+    <p *ngIf="!polylineForm.get('lat_a')!.valid && polylineForm.get('lat_a')!.touched"></p>
+
+    <mat-form-field>
+        <mat-label>Longitudine di arrivo</mat-label>
+        <input matInput type="number" name="lon_a" formControlName="lon_a">
+    </mat-form-field>
+    <p *ngIf="!polylineForm.get('lon_a')!.valid && polylineForm.get('lon_a')!.touched"></p>
+
+
+    <mat-form-field>
+        <mat-label>Colore</mat-label>
+        <mat-select [(value)]="selectedValueColor" formControlName="colore">                                                     
+        <mat-option *ngFor="let color of allColors" [value]="'#' + color.value">
+            {{color.label}} 
+        </mat-option>
+        </mat-select>
+    </mat-form-field>
+    <p>{{selectedValueColor}}</p>                                                   <!--Dopo la selezione mostro esadecimale selezionato--> 
+
+    <button mat-raised-button color="accent" type="submit" [disabled]="!polylineForm.valid" style="margin-right: 50px">Crea Polyline</button>
+</form>
+
+<button mat-icon-button class="example-icon favorite-icon" aria-label="Example icon-button with heart icon" (click)="home()">
+    <mat-icon style="color:chocolate">home</mat-icon>
+</button>

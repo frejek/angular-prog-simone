@@ -1,0 +1,65 @@
+<form [formGroup]="updatePolylineForm" (ngSubmit)="onSubmit()"> 
+    <mat-form-field>
+        <mat-label>Id</mat-label>
+        <input matInput type="number" name="id" formControlName="id">
+    </mat-form-field>
+    <p *ngIf="!updatePolylineForm.get('id')!.valid && updatePolylineForm.get('id')!.touched"></p> 
+
+    <mat-form-field>
+        <mat-label>Luogo di partenza</mat-label>
+        <input matInput type="string" name="nome_p" formControlName="nome_p">
+    </mat-form-field>
+    <p *ngIf="!updatePolylineForm.get('nome_p')!.valid && updatePolylineForm.get('nome_p')!.touched"></p> 
+
+    <mat-form-field>
+        <mat-label>Luogo di arrivo</mat-label>
+        <input matInput type="string" name="nome_a" formControlName="nome_a">
+    </mat-form-field>
+    <p *ngIf="!updatePolylineForm.get('nome_a')!.valid && updatePolylineForm.get('nome_a')!.touched"></p> 
+
+    <mat-form-field>
+        <mat-label>Latitudine di partenza</mat-label>
+        <input matInput type="number" name="lat_p" formControlName="lat_p">
+    </mat-form-field>
+    <p *ngIf="!updatePolylineForm.get('lat_p')!.valid && updatePolylineForm.get('lat_p')!.touched"></p>
+    
+    <mat-form-field>
+        <mat-label>Longitudine di partenza</mat-label>
+        <input matInput type="number" name="lon_p" formControlName="lon_p">
+    </mat-form-field>
+    <p *ngIf="!updatePolylineForm.get('lon_p')!.valid && updatePolylineForm.get('lon_p')!.touched"></p> 
+
+    <mat-form-field>
+        <mat-label>Latitudine di arrivo</mat-label>
+        <input matInput type="number" name="lat_a" formControlName="lat_a">
+    </mat-form-field>
+    <p *ngIf="!updatePolylineForm.get('lat_a')!.valid && updatePolylineForm.get('lat_a')!.touched"></p>
+    
+    <mat-form-field>
+        <mat-label>Longitudine di arrivo</mat-label>
+        <input matInput type="number" name="lon_a" formControlName="lon_a">
+    </mat-form-field>
+    <p *ngIf="!updatePolylineForm.get('lon_a')!.valid && updatePolylineForm.get('lon_a')!.touched"></p> 
+
+
+    <mat-form-field>
+        <mat-label>Colore</mat-label>
+        <mat-select [(value)]="selectedValueColor" formControlName="colore">                                                     
+            <mat-option *ngFor="let color of allColors" [value]="'#' + color.value">
+                {{color.label}} 
+            </mat-option>
+        </mat-select>
+    </mat-form-field>
+    <p>{{selectedValueColor}}</p>                                                            <!--Dopo la selezione mostro esadecimale selezionato--> 
+    
+    <!-- Il vottone rimane disabilitato finchè non ho compilato tutti campio di testo-->
+    <!--<button mat-raised-button color="primary" type="submit" [disabled]="!markerForm.valid" style="margin-bottom: 50px">Crea Marker</button> -->
+    <button mat-raised-button color="accent" type="submit" [disabled]="!updatePolylineForm.valid" style="margin-right: 50px">Modifica Polyline</button>
+</form>
+
+<button mat-icon-button class="example-icon favorite-icon" aria-label="Example icon-button with heart icon" (click)="home()">
+    <mat-icon style="color:chocolate">home</mat-icon>
+</button>
+
+
+

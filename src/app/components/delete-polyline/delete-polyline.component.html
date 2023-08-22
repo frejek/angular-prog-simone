@@ -1,0 +1,13 @@
+<form [formGroup]="deletePolylineForm" (ngSubmit)="onSubmit()"> 
+    <mat-form-field>
+        <mat-label>Id</mat-label>
+        <input matInput type="number" name="id" formControlName="id">
+    </mat-form-field>
+    <p *ngIf="!deletePolylineForm.get('id')!.valid && deletePolylineForm.get('id')!.touched"></p> 
+
+    <button mat-raised-button color="accent" type="submit" [disabled]="!deletePolylineForm.valid" style="margin-right: 50px">Delete Polyline</button>
+</form>
+
+<button mat-icon-button class="example-icon favorite-icon" aria-label="Example icon-button with heart icon" (click)="home()">
+    <mat-icon style="color:chocolate">home</mat-icon>
+</button>

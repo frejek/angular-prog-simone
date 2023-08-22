@@ -1,0 +1,45 @@
+<mat-toolbar color="primary">
+    <!--<button mat-icon-button class="example-icon" aria-label="Example icon-button with menu icon">
+      <mat-icon>menu</mat-icon>
+    </button> -->
+    <span>Mappa di geocalizzazione</span> 
+    <span class="example-spacer"></span>
+
+    <button mat-icon-button class="example-icon favorite-icon" aria-label="Example icon-button with heart icon" (click)="onListMarker()">
+      <mat-icon style="color:chocolate">Lista marker aggiornata</mat-icon>
+    </button>
+    <button mat-raised-button (click)="onListMarker()" style="color:chocolate">Lista marker aggiornata</button>
+
+    <button mat-icon-button class="example-icon favorite-icon" aria-label="Example icon-button with heart icon" (click)="onCreateMarker()">
+      <mat-icon>push_pin</mat-icon>
+    </button>
+    <button mat-raised-button (click)="onCreateMarker()">Crea Marker</button>
+     
+    <button mat-icon-button class="example-icon favorite-icon" aria-label="Example icon-button with heart icon" (click)="onUpdateMarker()" >
+      <mat-icon>edit</mat-icon>
+    </button>
+    <button mat-raised-button (click)="onUpdateMarker()">Modifica Marker</button>
+
+    <button mat-icon-button class="example-icon favorite-icon" aria-label="Example icon-button with heart icon" (click)="onDeleteMarker()" >
+      <mat-icon>delete_outline</mat-icon>
+    </button>
+    <button mat-raised-button (click)="onDeleteMarker()">Elimina Marker</button>
+
+    <button mat-icon-button class="example-icon" aria-label="Example icon-button with share icon" (click)="onCreatePolyline()" style="margin-left: 300px">
+      <mat-icon>show_chart</mat-icon>
+    </button> 
+    <!--<button mat-raised-button >Crea Polyline</button>-->
+    <button mat-raised-button style="margin-right: 300;" (click)="onCreatePolyline()">Crea Polyline</button>
+
+    <button mat-icon-button class="example-icon" aria-label="Example icon-button with share icon" (click)="onUpdatePolyline()">
+      <mat-icon>timeline</mat-icon>
+    </button> 
+    <button mat-raised-button style="margin-right: 300;" (click)="onUpdatePolyline()">Modifica Polyline</button>
+
+    <button mat-icon-button class="example-icon favorite-icon" aria-label="Example icon-button with heart icon" (click)="onDeletePolyline()" >
+      <mat-icon>remove</mat-icon>
+    </button>
+    <button mat-raised-button (click)="onDeletePolyline()">Elimina Polyline</button>
+
+</mat-toolbar>
+

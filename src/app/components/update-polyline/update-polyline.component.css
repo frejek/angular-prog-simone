@@ -1,0 +1,22 @@
+form {
+    display: flex;
+    flex-direction: row;
+    align-items: flex-start;
+    margin-bottom: 0px;
+}
+
+.button {
+    display: flex  !important;;
+    flex-direction: column !important;;
+    margin-bottom: 100px !important;
+}
+
+
+/* ::ng-deep può essere usato per forzare uno stile fino ai componenti figlio.*/
+input.ng-touched.ng-invalid {
+    background-color: red !important;
+}
+
+input.ng-valid {
+    background-color: green !important;
+}

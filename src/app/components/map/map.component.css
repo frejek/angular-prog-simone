@@ -1,0 +1,16 @@
+/* 
+.map-container {
+  position: absolute;
+  top: 120px;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  margin: 0px;
+}
+*/
+
+/*gestisce il dimensionamento di un elemento in relazione all'altezza della finestra del browser.*/
+#map{
+  height: 100vh;          /* preferisco rendere la mia finestra del browswer più scalabile si adatta meglio. */
+}
+

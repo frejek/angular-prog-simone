@@ -1,0 +1,16 @@
+<button mat-icon-button class="example-icon favorite-icon" aria-label="Example icon-button with heart icon" (click)="home()">
+    <mat-icon style="color:chocolate">home</mat-icon>
+</button>
+
+<h1 style="margin-left: 15px;"><p style="color:chocolate">Lista dei marker aggiornati</p></h1>
+<div *ngFor="let marker of singleMarker.data">
+    <p><strong style="margin-left: 15px;">id:</strong>{{marker.id}}</p>
+    <p><strong style="margin-left: 15px;">Citta di partenza:</strong>{{marker.nome}}</p>
+    <p><strong style="margin-left: 15px;">Indirizzo:</strong>{{marker.indirizzo}}</p>
+    <p><strong style="margin-left: 15px;">Latitudine:</strong>{{marker.lat}}</p>
+    <p><strong style="margin-left: 15px;">Longitudine:</strong>{{marker.lon}}</p>
+    <p><strong style="margin-left: 15px;">Colore:</strong>{{marker.colore}}</p>
+    <p><strong style="margin-left: 15px;">Marker movimento:</strong>{{marker.draggable}}</p><br><br>
+</div>
+
+
